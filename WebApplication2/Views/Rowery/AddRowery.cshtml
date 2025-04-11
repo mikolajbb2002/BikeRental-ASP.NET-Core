@@ -1,0 +1,94 @@
+@model WebApplication2.Models.Rowery
+@{ ViewData["Title "] = "AddRowery";}
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+<div class="form-horizontal">
+    <h4>Dodaj Rower</h4>
+    <hr />
+    @Html.ValidationSummary(true)
+    <div class="form-group">
+        @Html.LabelFor(model => model.Producent, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Producent)
+            @Html.ValidationMessageFor(model => model.Producent)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nazwa, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Nazwa)
+            @Html.ValidationMessageFor(model => model.Nazwa)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Napęd, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Napęd)
+            @Html.ValidationMessageFor(model => model.Napęd)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Hamulce, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Hamulce)
+            @Html.ValidationMessageFor(model => model.Hamulce)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Amortyzacja, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Amortyzacja)
+            @Html.ValidationMessageFor(model => model.Amortyzacja)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RozmiarRamy, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.RozmiarRamy)
+            @Html.ValidationMessageFor(model => model.RozmiarRamy)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TypRoweru, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TypRoweru)
+            @Html.ValidationMessageFor(model => model.TypRoweru)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Cena, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Cena)
+            @Html.ValidationMessageFor(model => model.Cena)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Status, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Status)
+            @Html.ValidationMessageFor(model => model.Status)
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+<div>
+    @Html.ActionLink("Back to Employee List", "Index")
+</div>
+
+
+
+
+

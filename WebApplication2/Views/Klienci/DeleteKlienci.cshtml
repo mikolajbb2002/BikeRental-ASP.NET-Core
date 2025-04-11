@@ -1,0 +1,31 @@
+@model WebApplication2.Models.Klienci
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="text-danger">Czy na pewno chcesz usunąć użytkownika?</h1>
+
+<p>Ta operacja jest nieodwracalna</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="IdKlienta" />
+
+            <div class="mb-3">
+                <label asp-for="Imie" class="form-label">Imię</label>
+                <input asp-for="Imie" class="form-control" readonly />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Nazwisko" class="form-label">Nazwisko</label>
+                <input asp-for="Nazwisko" class="form-control" readonly />
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Usuń</button>
+                <a href="@Url.Action("Index", "Klienci")" class="btn border-primary">Powrot</a>
+            </div>
+        </form>
+    </div>
+</div>

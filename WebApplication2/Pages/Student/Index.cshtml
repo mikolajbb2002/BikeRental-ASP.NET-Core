@@ -1,0 +1,27 @@
+@model WebApplication2.Models.Klienci
+
+@{
+    ViewData["Title"] = "Create Klient";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Imie">Imię</label>
+        <input type="text" class="form-control" id="Imie" name="Imie" required />
+    </div>
+    <div class="form-group">
+        <label for="Nazwisko">Nazwisko</label>
+        <input type="text" class="form-control" id="Nazwisko" name="Nazwisko" required />
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" required />
+    </div>
+    <div class="form-group">
+        <label for="Telefon">Telefon</label>
+        <input type="text" class="form-control" id="Telefon" name="Telefon" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Zapisz</button>
+</form>

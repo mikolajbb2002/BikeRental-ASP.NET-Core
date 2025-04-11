@@ -1,0 +1,79 @@
+@model IEnumerable<WebApplication2.Models.Rowery>  
+
+@{
+    ViewData["Title"] = "Lista Rower";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    @Html.ActionLink("Dodaj rower", "AddRowery")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Producent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Napęd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hamulce)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amortyzacja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RozmiarRamy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypRoweru)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nazwa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Napęd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hamulce)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amortyzacja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RozmiarRamy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypRoweru)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditKlienci", new { IdKlienta = item.IdRoweru }) |
+            @Html.ActionLink("Delete", "DeleteKlienci", new { IdKlienta = item.IdRoweru })
+        </td>
+    </tr>
+    }
+</table>

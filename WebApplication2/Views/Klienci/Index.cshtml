@@ -1,0 +1,58 @@
+@model List<WebApplication2.ViewModels.KlienciViewModel>
+@{
+    ViewData["Title"] = "Lista klientów";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Lista klientów</h2>
+    <form asp-action="Create" method="get">
+        
+        <button type="submit" class="btn btn-primary mb-3">Dodaj nowego klienta</button>
+    </form>
+    <div class="card">
+        <div class="card-body">
+            @if (Model != null && Model.Any())
+            {
+                <table class="table table-hover table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Imię</th>
+                            <th>Nazwisko</th>
+                            <th>Email</th>
+                            <th>Telefon</th>
+                            <th class="text-center">Akcje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var klient in Model)
+                        {
+                            <tr>
+                                <td>@klient.Imie</td>
+                                <td>@klient.Nazwisko</td>
+                                <td>@klient.Email</td>
+                                <td>@klient.Telefon</td>
+                                <td class="text-center">
+                                    <form asp-action="Edit" method="get">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="id" value="@klient.IdKlienta" />
+                                        <button type="submit" class="btn btn-warning btn-sm">Edytuj</button>
+                                    </form>
+
+                                    <form asp-action="Delete" method="post" onsubmit="return confirm('Czy na pewno chcesz usunąć tego klienta?');">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="id" value="@klient.IdKlienta" />
+                                        <button type="submit" class="btn btn-danger btn-sm">Usuń</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p class="text-muted text-center">Brak klientów do wyświetlenia.</p>
+            }
+        </div>
+    </div>
+</div>
