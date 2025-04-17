@@ -55,7 +55,7 @@ namespace WebApplication2.Controllers
                 await _service.CreateAsync(klient);
                 return RedirectToAction("Index");
             }
-            return View(model);
+            return View();
         }
     }
 }
