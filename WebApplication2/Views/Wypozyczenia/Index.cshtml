@@ -1,0 +1,62 @@
+@model List<WebApplication2.Models.Wypozyczenia>
+@{
+    ViewData["Title"] = "Lista wypozyczen";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Lista wypozyczen</h2>
+    <div class="card">
+        <div class="card-body">
+            <form asp-action="Create" method="get">
+
+                <button type="submit" class="btn btn-primary mb-3">Dodaj nowe wypozyczenie </button>
+            </form>
+            @if (Model != null && Model.Any())
+            {
+                <table class="table table-hover table-bordered">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>IdWypo</th>
+                        <th>Idwypozyczenia</th>
+                        <th>IdRoweru</th>
+                        <th>Data Wypozyczenia</th>
+                        <th>Data Zwrotu</th>
+                        <th>Koszt Wypozyczenia</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var wypozyczenia in Model)
+                    {
+                        <tr>
+                            <td>@wypozyczenia.IdWypozyczenia</td>
+                            <td>@wypozyczenia.IdKlienta</td>
+                            <td>@wypozyczenia.IdRoweru</td>
+                            <td>@wypozyczenia.DataWypozyczenia</td>
+                            <td>@wypozyczenia.DataZwrotu</td>
+                            <td>@wypozyczenia.KosztWypozyczenia</td>
+                            <td class="text-center">
+                                <form asp-action="Edit" method="get">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id" value="@wypozyczenia.IdWypozyczenia"/>
+                                    <button type="submit" class="btn btn-warning btn-sm">Edytuj</button>
+                                </form>
+
+                                <form asp-action="Delete" method="post" onsubmit="return confirm('Czy na pewno chcesz usunąć tego wypozyczeniaa?');">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id" value="@wypozyczenia.IdWypozyczenia"/>
+                                    <button type="submit" class="btn btn-danger btn-sm">Usuń</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p class="text-muted text-center">Brak wypozyczeniaów do wyświetlenia.</p>
+            }
+        </div>
+    </div>
+</div>

@@ -16,4 +16,6 @@ public class Rowery
     public string TypRoweru { get; set; }
     public decimal Cena { get; set; }
     public string Status { get; set; }
+    
+    public ICollection<Wypozyczenia> Wypozyczenia { get; set; }
 }
