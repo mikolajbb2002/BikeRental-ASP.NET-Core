@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using WebApplication2.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace WebApplication2.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<IdentityUser, IdentityRole, string>
     {
         public DbSet<Rowery> Rowery { get; set; }
         public DbSet<Klienci> Klienci { get; set; }

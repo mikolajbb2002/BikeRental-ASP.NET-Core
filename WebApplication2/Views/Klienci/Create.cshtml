@@ -1,4 +1,4 @@
-@model WebApplication2.Models.Klienci
+@model WebApplication2.ViewModels.KlienciViewModel
 @{ ViewData["Title "] = "Create";}
 
 @using (Html.BeginForm())
@@ -12,35 +12,35 @@
         @Html.LabelFor(model => model.Imie, new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Imie)
-            @Html.ValidationMessageFor(model => model.Imie)
+            @Html.ValidationMessageFor(model => model.Imie, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(model => model.Nazwisko, new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Nazwisko)
-            @Html.ValidationMessageFor(model => model.Nazwisko)
+            @Html.ValidationMessageFor(model => model.Nazwisko, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Email)
-            @Html.ValidationMessageFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(model => model.Telefon, new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Telefon)
-            @Html.ValidationMessageFor(model => model.Telefon)
+            @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
         </div>
     </div>
    
  
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+        <div class="col-md-offset-100 col-md-10">
+            <input type="submit" value="Save" class="btn btn-primary" />
         </div>
     </div>
 </div>
