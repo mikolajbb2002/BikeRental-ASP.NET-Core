@@ -1,0 +1,42 @@
+@model UserViewModel
+@{
+    ViewData["Title"] = "Usuń użytkownika";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Usuń użytkownika</h1>
+    <p class="mb-4">Czy na pewno chcesz usunąć tego użytkownika?</p>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Potwierdzenie usunięcia</h6>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-danger">
+                <h4>Uwaga! Ta operacja jest nieodwracalna.</h4>
+            </div>
+
+            <dl class="row">
+                <dt class="col-sm-3">ID:</dt>
+                <dd class="col-sm-9">@Model.Id</dd>
+
+                <dt class="col-sm-3">Nazwa użytkownika:</dt>
+                <dd class="col-sm-9">@Model.Username</dd>
+
+                <dt class="col-sm-3">Email:</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+
+                <dt class="col-sm-3">Rola:</dt>
+                <dd class="col-sm-9">@Model.Role</dd>
+            </dl>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Usuń" class="btn btn-danger" />
+                <a asp-action="Index" class="btn btn-secondary">Powrót do listy</a>
+            </form>
+        </div>
+    </div>
+</div>

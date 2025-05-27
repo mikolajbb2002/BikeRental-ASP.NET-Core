@@ -18,6 +18,8 @@
 
         <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0" />
 
+        <PackageReference Include="Microsoft.DotNet.Scaffolding.Shared" Version="9.0.0" />
+
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.2" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.2" />
@@ -39,6 +41,11 @@
       <AdditionalFiles Include="Views\Rowery\Delete.cshtml" />
       <AdditionalFiles Include="Views\Rowery\Edit.cshtml" />
       <AdditionalFiles Include="Views\Rowery\Index.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Areas\" />
+      <Folder Include="wwwroot\admin\" />
     </ItemGroup>
 
 </Project>

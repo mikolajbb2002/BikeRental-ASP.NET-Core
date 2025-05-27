@@ -5,13 +5,11 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace WebApplication2.Data
 {
-    public class AppDbContext : IdentityDbContext<IdentityUser, IdentityRole, string>
+    public class AppDbContext : IdentityDbContext<IdentityUser>
     {
         public DbSet<Rowery> Rowery { get; set; }
         public DbSet<Klienci> Klienci { get; set; }
         public DbSet<Wypozyczenia> Wypozyczenia { get; set; }
-
-        // Konstruktor z DbContextOptions
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         

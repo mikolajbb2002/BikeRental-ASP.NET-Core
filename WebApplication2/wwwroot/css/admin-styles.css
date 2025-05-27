@@ -1,0 +1,129 @@
+
+body {
+    background-color: #f5f5f5;
+    font-family: 'Optima', sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+button,
+input,
+optgroup,
+select,
+textarea,
+.btn,
+.dropdown-item,
+.sidebar .nav-item .nav-link span,
+.card-header {
+    font-family: 'Optima', sans-serif !important;
+}
+#accordionSidebar,
+.navbar-nav.bg-gradient-success,
+.sidebar.bg-gradient-success {
+    background-color: #094d26 !important;
+    background-image: linear-gradient(180deg, #094d26 10%, #033016 100%) !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.sidebar-brand {
+    height: 80px !important;
+    padding: 0 !important;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+.sidebar-brand-icon {
+    width: 40px;
+    height: 40px;
+}
+.sidebar-brand-icon i {
+    color: #4dff9e !important;
+    font-size: 1.5rem !important;
+}
+.sidebar-brand-text {
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+}
+.nav-item .nav-link {
+    padding: 14px 20px !important;
+    font-size: 1.05rem !important;
+    font-weight: 500 !important;
+}
+.nav-item .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.sidebar .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+.sidebar .nav-item .nav-link i {
+    color: #4dff9e !important;
+    font-size: 1.1rem !important;
+}
+.sidebar-heading {
+    color: #4dff9e !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+}
+.topbar {
+    height: 80px !important;
+}
+#content-wrapper {
+    background-color: #f8fff9 !important;
+}
+.card {
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05) !important;
+    margin-bottom: 25px !important;
+}
+
+.card-header {
+    background: white !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    padding: 1.2rem 1.5rem !important;
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+}
+
+.card-body {
+    padding: 1.5rem !important;
+}
+
+/* 6. Tabele */
+.table th {
+    background-color: #f5f5f5 !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+}
+
+/* 7. Przyciski */
+.btn {
+    border-radius: 8px !important;
+    padding: 0.6rem 1.2rem !important;
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+}
+
+.btn-success {
+    background-color: #094d26 !important;
+    border-color: #094d26 !important;
+}
+
+.btn-success:hover {
+    background-color: #0a5e2f !important;
+    border-color: #0a5e2f !important;
+}
+
+/* 8. Alerty */
+.alert {
+    border-radius: 10px !important;
+    border: none !important;
+    padding: 1.2rem !important;
+    margin-bottom: 1.5rem !important;
+    font-size: 1.05rem !important;
+}
+
+/* 9. Footer */
+.sticky-footer {
+    padding: 1.5rem !important;
+}

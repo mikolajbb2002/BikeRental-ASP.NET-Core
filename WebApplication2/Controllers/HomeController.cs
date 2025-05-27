@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApplication2.Controllers;
 
@@ -13,12 +14,12 @@ public class HomeController : Controller
         _logger = logger;
     }
     
-    
+    [AllowAnonymous]
     public IActionResult Index()
     {
         return View();
     }
-
+    [AllowAnonymous]
     public IActionResult Privacy()
     {
         return View();
