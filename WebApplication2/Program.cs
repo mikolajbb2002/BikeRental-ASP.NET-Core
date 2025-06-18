@@ -12,8 +12,26 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add localization services
+
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization()
+    .AddDataAnnotationsLocalization();
+
+var supportedCultures = new[]
+{
+    new CultureInfo("en-US"),
+    new CultureInfo("pl-PL"),
+};
+
 
 // Add services to the container
 builder.Services.AddControllersWithViews();
@@ -119,6 +137,13 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseRequestLocalization(new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture("pl-PL"),
+    SupportedCultures = supportedCultures,
+    SupportedUICultures = supportedCultures
+});
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -149,3 +174,4 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
+public partial class Program { }

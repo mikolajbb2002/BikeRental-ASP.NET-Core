@@ -18,6 +18,8 @@
 
         <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0" />
 
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Localization" Version="2.3.0" />
+
         <PackageReference Include="Microsoft.DotNet.Scaffolding.Shared" Version="9.0.0" />
 
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.2" />
@@ -46,6 +48,48 @@
     <ItemGroup>
       <Folder Include="Areas\" />
       <Folder Include="wwwroot\admin\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Resources\Views\Home\Index.en-US.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.en-US.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Home\Index.pl-PL.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Index.pl-PL.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\_Layout.en-US.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_Layout.en-US.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\_Layout.pl-PL.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_Layout.pl-PL.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Resources\Views\Home\Index.en-US.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.en-US.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Home\Index.pl-PL.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Index.pl-PL.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\_Layout.en-US.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_Layout.en-US.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\_Layout.pl-PL.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_Layout.pl-PL.resx</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>
