@@ -18,3 +18,8 @@ Aplikacja powstała na potrzeby nauki.
 - Automapper
 - Testy automatyczne (xUnit/nUnit)
 
+Projekt semestralny
+
+Autor: mikolajbb2002
+
+
